@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define MAX 8
+#define MAX 1024
 #define BUFFER_SIZE 4096*1024
 #define CHAR 'x'
 

@@ -9,7 +9,11 @@ int main(int argc, char **argv){
 		printf("Memory allocationg aligned in %d\n", align[b]);
 		printf("====================================\n");
 		for (shift = 0 ; shift < 8 ; shift++){
-			printf("\nUn-aligned in +%d bytes\n", shift);
+			if (shift == 0)
+				printf("\nAlignment access\n");
+			else
+				printf("\nUn-aligned in +%d bytes\n", shift);
+
 			default_allocation8(shift, align[b]);
 			default_allocation16(shift, align[b]);
 			default_allocation32(shift, align[b]);

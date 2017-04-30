@@ -10,7 +10,7 @@ int main(int argc, char **argv){
 		printf("====================================\n");
 		for (shift = 0 ; shift < 8 ; shift++){
 			if (shift == 0)
-				printf("\nAlignment access\n");
+				printf("\nAligned access\n");
 			else
 				printf("\nUn-aligned in +%d bytes\n", shift);
 

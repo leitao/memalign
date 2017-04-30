@@ -20,17 +20,11 @@ void read8(uint8_t *ptr){
 	i = w;
 }
 
-void default_allocation8(int shift) {
+void default_allocation8(int shift, int align) {
 	uint8_t *ptr;
 	clock_t diff;
 
-
-	printf("\n == Memory allocation shifiting %d byte(s) == \n", shift);
-
-	// Allocating a bit extra to try unaligned
-	ptr = (uint8_t *) malloc((BUFFER_SIZE + shift) * sizeof(uint8_t)) + shift;
-
-	printf("\tMemory allocated at: %p\n\n", ptr);
+	ptr = alloc(shift, align);
 
 	diff = measure(&write8, ptr);
 

@@ -25,12 +25,11 @@ void read16(uint8_t *ptr2){
 	i = w;
 }
 
-void default_allocation16(int shift) {
+void default_allocation16(int shift, int align) {
 	uint8_t *ptr;
 	clock_t diff;
 
-	// Allocating a bit extra to try unaligned
-	ptr = (uint8_t *) malloc((BUFFER_SIZE + shift) * sizeof(uint8_t)) + shift;
+	ptr = alloc(shift, align);
 
 	diff = measure(&write16, ptr);
 

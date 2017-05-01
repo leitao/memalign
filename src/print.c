@@ -31,12 +31,16 @@ static void print_human(bool read, int word, int shift, int align, clock_t ms){
 }
 
 static void print_machine(bool read, int word, int shift, int align, clock_t ms){
+	//printf("Memory allocation alignment| Write alignment | read/write | load/store size | time\n");
+	printf("%d| ", align);
+	printf("%d: ", shift);
+
 	if (read)
 		printf("read ");
 	else
 		printf("write ");
 
-	printf("%d %d %d %Lf\n", word, shift, align, (long double) ms/(1000*1000));
+	printf("%d %Lf\n", word,  (long double) ms/(1000*1000));
 }
 
 void print(bool read, int word, int shift, int align, clock_t ms){

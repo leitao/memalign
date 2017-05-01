@@ -1,5 +1,7 @@
+SRC = src
+
 all:
-	gcc -O0 -g align.c byte.c measure.c half.c word.c double.c alloc.c -Wall
+	gcc -O0 -g src/align.c src/byte.c src/measure.c src/half.c src/word.c src/double.c src/alloc.c -Wall
 
 clean:
 	rm -fr a.out

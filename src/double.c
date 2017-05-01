@@ -34,11 +34,11 @@ void default_allocation64(int shift, int align) {
 
 	diff = measure(&write64, ptr);
 
-	printf("\tWrite (dword) :\t %Lf ms\n", (long double) diff/(1000 * 1000));
+	print(false, 8, shift, align, diff);
 
 	diff = measure(&read64, ptr);
 
-	printf("\tRead (dword)  :\t %Lf ms\n", (long double) diff/(1000 * 1000));
+	print(true, 8, shift, align, diff);
 
 	free(ptr - shift);
 }

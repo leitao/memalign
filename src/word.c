@@ -33,11 +33,11 @@ void default_allocation32(int shift, int align) {
 
 	diff = measure(&write32, ptr);
 
-	printf("\tWrite (word) :\t %Lf ms\n", (long double) diff/(1000 * 1000));
+	print(false, 4, shift, align, diff);
 
 	diff = measure(&read32, ptr);
 
-	printf("\tRead (word)  :\t %Lf ms\n", (long double) diff/(1000 * 1000));
+	print(false, 4, shift, align, diff);
 
 	free(ptr - shift);
 }

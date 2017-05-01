@@ -28,11 +28,9 @@ void default_allocation8(int shift, int align) {
 
 	diff = measure(&write8, ptr);
 
-	printf("\tWrite (byte) :\t %Lf ms\n", (long double) diff/(1000 * 1000));
-
+	print(false, 1, shift, align, diff);
 	diff = measure(&read8, ptr);
-
-	printf("\tRead (byte)  :\t %Lf ms\n", (long double) diff/(1000 * 1000));
+	print(true, 1, shift, align, diff);
 
 	free(ptr - shift);
 }

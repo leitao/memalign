@@ -32,12 +32,10 @@ void default_allocation16(int shift, int align) {
 	ptr = alloc(shift, align);
 
 	diff = measure(&write16, ptr);
-
 	print(false, 2, shift, align, diff);
 
 	diff = measure(&read16, ptr);
-
-	print(false, 2, shift, align, diff);
+	print(true, 2, shift, align, diff);
 
 	free(ptr - shift);
 }

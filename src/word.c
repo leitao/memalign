@@ -36,8 +36,7 @@ void default_allocation32(int shift, int align) {
 	print(false, 4, shift, align, diff);
 
 	diff = measure(&read32, ptr);
-
-	print(false, 4, shift, align, diff);
+	print(true, 4, shift, align, diff);
 
 	free(ptr - shift);
 }

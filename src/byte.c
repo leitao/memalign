@@ -27,8 +27,8 @@ void default_allocation8(int shift, int align) {
 	ptr = alloc(shift, align);
 
 	diff = measure(&write8, ptr);
-
 	print(false, 1, shift, align, diff);
+
 	diff = measure(&read8, ptr);
 	print(true, 1, shift, align, diff);
 

@@ -37,7 +37,6 @@ void default_allocation64(int shift, int align) {
 	print(false, 8, shift, align, diff);
 
 	diff = measure(&read64, ptr);
-
 	print(true, 8, shift, align, diff);
 
 	free(ptr - shift);

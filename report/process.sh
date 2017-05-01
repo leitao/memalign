@@ -14,5 +14,8 @@ cat $OUTPUT | grep 0\| | grep \read > $READ
 awk ' {print $4 " " $5;} NR % 4 == 0 { print "\n"; }' $WRITE > $WRITE.tmp
 awk ' {print $4 " " $5;} NR % 4 == 0 { print "\n"; }' $READ > $READ.tmp
 
-#gnuplot -c write.plot $WRITE.tmp
+gnuplot -c write.plot $WRITE.tmp
 gnuplot -c read.plot $READ.tmp
+
+#rm $OUTPUT
+rm $WRITE $WRITE.tmp $READ $READ.tmp
